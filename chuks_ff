@@ -1,0 +1,45 @@
+📊 Bike Store Sales Analysis: From SQL to Tableau Dashboard
+Project Overview: A comprehensive end-to-end data analysis project identifying revenue drivers and underperforming regions for a multi-store retail chain.
+
+🎯 The Business Problem
+The store management team noticed fluctuating sales across different regions and product categories. They lacked a centralized view of performance and needed to answer:
+
+Which geographic regions are underperforming in terms of revenue?
+
+Which product categories are high-volume but low-margin?
+
+How do seasonal trends affect inventory needs?
+
+🛠️ The Tech Stack
+🚀 The Data Pipeline
+1. Data Extraction (SQL)
+Extracted a master dataset from a relational database, joining orders, customers, products, and categories.
+
+Key SQL Technique: Used LEFT JOIN and Inner Join to ensure no sales data was lost.
+
+Calculated Field: Created a Revenue column within the query to reduce processing time in Python.
+
+2. Data Cleaning & Transformation (Pandas)
+Using Python, I performed the following:
+
+New column: I couldn't calculate the profit margin because my Dataset didn't have a cost price column. So I assigned a cost price based on a percentage of the list price
+
+Data Consistency: Formatted dates for time-series analysis.
+
+Segmentation: Created a Customer_Segment column to categorize order frequency.
+
+3. Data Visualization (Tableau)
+Designed an interactive dashboard focusing on Executive KPIs.
+
+Interactive Filters: Users can filter by Category name.
+
+Key Visuals: A geospatial map of sales and a dual-axis chart comparing Revenue vs. profit margin. 
+
+💡 Key Insights & Results  
+The "Profit Trap": While Mountain Bikes drive the highest total revenue, Cruisers Bikes actually have a higher profit margin. This helps us identify which products are "Volume Drivers" versus "Profit Drivers."
+
+Performance Index: Seasonal demand patterns show peaks in early spring and late Q3-Q4, indicating the need for proactive inventory buildup before these periods
+
+Growth Opportunity: I identified that the Electric Bikes category grew by 413.89% in the final quarter, outperforming all other categories despite having a smaller initial market share.
+
+Technical Challenges: One challenge I faced was Tableau's Order of Operations. Standard date filters were breaking my growth calculations. I resolved this by implementing a LOOKUP table calculation filter, allowing for dynamic date selection without losing the historical context required for Percent Difference calculations."
